@@ -34,6 +34,8 @@ Public Class PICUsartForm
     '****************Event Handlers*************************
     Private Sub PICUsartForm_Load(sender As Object, e As EventArgs) Handles Me.Load
         SetDefaults()
+        'Open COM Port
+        OpenCOM()
     End Sub
 
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
@@ -51,10 +53,13 @@ Public Class PICUsartForm
         Thread.Sleep(100)
         'Read Acknowledge Byte
         SerialPort1.Read(data, 0, 1)
-
-
-        'txData = CInt(ServoPosComboBox.SelectedItem)
-
+        'Confirm Acknowledge
+        If data(0) = &H24 Then
+            'Set Data as ComboBox Selection
+            data(0) = CByte(ServoPosComboBox.SelectedItem)
+            'Send Servo Position Data
+            SerialPort1.Write(data, 0, 1)
+        End If
     End Sub
 
 End Class

@@ -77,6 +77,11 @@ Partial Class PICUsartForm
         Me.TestLabel.TabIndex = 4
         Me.TestLabel.Text = "Label1"
         '
+        'SerialPort1
+        '
+        Me.SerialPort1.ReadTimeout = 500
+        Me.SerialPort1.WriteTimeout = 500
+        '
         'PICUsartForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
