@@ -26,9 +26,10 @@ Partial Class PICUsartForm
         Me.ExitButton = New System.Windows.Forms.Button()
         Me.ServoPosComboBox = New System.Windows.Forms.ComboBox()
         Me.ServoPosSelectLabel = New System.Windows.Forms.Label()
-        Me.SetServoPosButton = New System.Windows.Forms.Button()
-        Me.TestLabel = New System.Windows.Forms.Label()
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
+        Me.SerialSendTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.SerialSendOnRadioButton = New System.Windows.Forms.RadioButton()
+        Me.SerialSendOffRadioButton = New System.Windows.Forms.RadioButton()
         Me.SuspendLayout()
         '
         'ExitButton
@@ -45,7 +46,7 @@ Partial Class PICUsartForm
         '
         Me.ServoPosComboBox.FormattingEnabled = True
         Me.ServoPosComboBox.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"})
-        Me.ServoPosComboBox.Location = New System.Drawing.Point(520, 141)
+        Me.ServoPosComboBox.Location = New System.Drawing.Point(282, 39)
         Me.ServoPosComboBox.Name = "ServoPosComboBox"
         Me.ServoPosComboBox.Size = New System.Drawing.Size(158, 24)
         Me.ServoPosComboBox.TabIndex = 1
@@ -53,42 +54,50 @@ Partial Class PICUsartForm
         'ServoPosSelectLabel
         '
         Me.ServoPosSelectLabel.AutoSize = True
-        Me.ServoPosSelectLabel.Location = New System.Drawing.Point(527, 121)
+        Me.ServoPosSelectLabel.Location = New System.Drawing.Point(289, 19)
         Me.ServoPosSelectLabel.Name = "ServoPosSelectLabel"
         Me.ServoPosSelectLabel.Size = New System.Drawing.Size(142, 17)
         Me.ServoPosSelectLabel.TabIndex = 2
         Me.ServoPosSelectLabel.Text = "Select Servo Position"
-        '
-        'SetServoPosButton
-        '
-        Me.SetServoPosButton.Location = New System.Drawing.Point(521, 186)
-        Me.SetServoPosButton.Name = "SetServoPosButton"
-        Me.SetServoPosButton.Size = New System.Drawing.Size(156, 54)
-        Me.SetServoPosButton.TabIndex = 3
-        Me.SetServoPosButton.Text = "Send Servo Data"
-        Me.SetServoPosButton.UseVisualStyleBackColor = True
-        '
-        'TestLabel
-        '
-        Me.TestLabel.AutoSize = True
-        Me.TestLabel.Location = New System.Drawing.Point(573, 279)
-        Me.TestLabel.Name = "TestLabel"
-        Me.TestLabel.Size = New System.Drawing.Size(51, 17)
-        Me.TestLabel.TabIndex = 4
-        Me.TestLabel.Text = "Label1"
         '
         'SerialPort1
         '
         Me.SerialPort1.ReadTimeout = 500
         Me.SerialPort1.WriteTimeout = 500
         '
+        'SerialSendTimer
+        '
+        Me.SerialSendTimer.Interval = 500
+        '
+        'SerialSendOnRadioButton
+        '
+        Me.SerialSendOnRadioButton.AutoSize = True
+        Me.SerialSendOnRadioButton.Location = New System.Drawing.Point(292, 120)
+        Me.SerialSendOnRadioButton.Name = "SerialSendOnRadioButton"
+        Me.SerialSendOnRadioButton.Size = New System.Drawing.Size(125, 21)
+        Me.SerialSendOnRadioButton.TabIndex = 5
+        Me.SerialSendOnRadioButton.TabStop = True
+        Me.SerialSendOnRadioButton.Text = "Serial Send On"
+        Me.SerialSendOnRadioButton.UseVisualStyleBackColor = True
+        '
+        'SerialSendOffRadioButton
+        '
+        Me.SerialSendOffRadioButton.AutoSize = True
+        Me.SerialSendOffRadioButton.Location = New System.Drawing.Point(292, 147)
+        Me.SerialSendOffRadioButton.Name = "SerialSendOffRadioButton"
+        Me.SerialSendOffRadioButton.Size = New System.Drawing.Size(125, 21)
+        Me.SerialSendOffRadioButton.TabIndex = 6
+        Me.SerialSendOffRadioButton.TabStop = True
+        Me.SerialSendOffRadioButton.Text = "Serial Send Off"
+        Me.SerialSendOffRadioButton.UseVisualStyleBackColor = True
+        '
         'PICUsartForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.TestLabel)
-        Me.Controls.Add(Me.SetServoPosButton)
+        Me.Controls.Add(Me.SerialSendOffRadioButton)
+        Me.Controls.Add(Me.SerialSendOnRadioButton)
         Me.Controls.Add(Me.ServoPosSelectLabel)
         Me.Controls.Add(Me.ServoPosComboBox)
         Me.Controls.Add(Me.ExitButton)
@@ -102,7 +111,8 @@ Partial Class PICUsartForm
     Friend WithEvents ExitButton As Button
     Friend WithEvents ServoPosComboBox As ComboBox
     Friend WithEvents ServoPosSelectLabel As Label
-    Friend WithEvents SetServoPosButton As Button
-    Friend WithEvents TestLabel As Label
     Friend WithEvents SerialPort1 As IO.Ports.SerialPort
+    Friend WithEvents SerialSendTimer As Timer
+    Friend WithEvents SerialSendOnRadioButton As RadioButton
+    Friend WithEvents SerialSendOffRadioButton As RadioButton
 End Class
