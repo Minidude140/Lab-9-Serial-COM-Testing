@@ -2,7 +2,7 @@
 'RCET 5th Semester Lab
 '10/22/24
 'Testing USART With PIC16F883
-'GitHub: 
+'GitHub: https://github.com/Minidude140/Lab-9-Serial-COM-Testing
 
 Imports System.Threading
 Public Class PICUsartForm
