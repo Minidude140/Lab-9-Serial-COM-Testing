@@ -27,10 +27,17 @@ Public Class PICUsartForm
         SerialPort1.Open()
     End Sub
 
-    Sub SendData(txData As Byte)
-        Dim data() As Byte
-    End Sub
+    Function CalcTemp(data As Byte, Optional Centigrade As Boolean = False) As Integer
+        Dim temp As Integer
+        If Centigrade = False Then
+            temp = data * 2
+        ElseIf Centigrade = True Then
+            temp = data * 2
+            temp = (temp - 32) * (5 / 9)
+        End If
 
+        Return temp
+    End Function
 
     '****************Event Handlers*************************
     Private Sub PICUsartForm_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -50,18 +57,24 @@ Public Class PICUsartForm
         'Send $ 
         SerialPort1.Write(data, 0, 1)
         'Wait For Response
-        Thread.Sleep(1)
+        Thread.Sleep(100)
         'Read Acknowledge Byte
-        SerialPort1.Read(data, 0, 2)
+        SerialPort1.Read(data, 0, 3)
         'Confirm Acknowledge
         If data(0) = &H24 Then
-            'Save ADC Data
-            adcHigh = data(1)
-            adcLow = data(2)
             'Set Data as ComboBox Selection
             data(0) = CByte(ServoPosComboBox.SelectedItem)
             'Send Servo Position Data
             SerialPort1.Write(data, 0, 1)
+            'Save ADC Data
+            adcHigh = data(1)
+            adcLow = data(2)
+            'Write ADC data to Test Labels
+            ADCHLabel.Text = adcHigh
+            ADCLLabel.Text = adcLow
+            'Calculate Temp From Sensor Data
+            TempFLabel.Text = $"{CalcTemp(adcHigh)}°F"
+            TempCLabel.Text = $"{CalcTemp(adcHigh, True)}°C"
         End If
 
     End Sub
