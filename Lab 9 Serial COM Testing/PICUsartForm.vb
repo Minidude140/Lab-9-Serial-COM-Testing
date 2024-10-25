@@ -57,7 +57,7 @@ Public Class PICUsartForm
         'Send $ 
         SerialPort1.Write(data, 0, 1)
         'Wait For Response
-        Thread.Sleep(100)
+        Thread.Sleep(5)
         'Read Acknowledge Byte
         SerialPort1.Read(data, 0, 3)
         'Confirm Acknowledge

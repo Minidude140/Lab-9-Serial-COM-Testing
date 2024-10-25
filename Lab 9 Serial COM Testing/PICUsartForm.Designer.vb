@@ -79,7 +79,7 @@ Partial Class PICUsartForm
         'SerialSendOnRadioButton
         '
         Me.SerialSendOnRadioButton.AutoSize = True
-        Me.SerialSendOnRadioButton.Location = New System.Drawing.Point(56, 135)
+        Me.SerialSendOnRadioButton.Location = New System.Drawing.Point(243, 41)
         Me.SerialSendOnRadioButton.Name = "SerialSendOnRadioButton"
         Me.SerialSendOnRadioButton.Size = New System.Drawing.Size(125, 21)
         Me.SerialSendOnRadioButton.TabIndex = 5
@@ -90,7 +90,7 @@ Partial Class PICUsartForm
         'SerialSendOffRadioButton
         '
         Me.SerialSendOffRadioButton.AutoSize = True
-        Me.SerialSendOffRadioButton.Location = New System.Drawing.Point(56, 162)
+        Me.SerialSendOffRadioButton.Location = New System.Drawing.Point(243, 68)
         Me.SerialSendOffRadioButton.Name = "SerialSendOffRadioButton"
         Me.SerialSendOffRadioButton.Size = New System.Drawing.Size(125, 21)
         Me.SerialSendOffRadioButton.TabIndex = 6
@@ -101,7 +101,7 @@ Partial Class PICUsartForm
         'ADCHLabel
         '
         Me.ADCHLabel.AutoSize = True
-        Me.ADCHLabel.Location = New System.Drawing.Point(291, 76)
+        Me.ADCHLabel.Location = New System.Drawing.Point(460, 68)
         Me.ADCHLabel.Name = "ADCHLabel"
         Me.ADCHLabel.Size = New System.Drawing.Size(16, 17)
         Me.ADCHLabel.TabIndex = 7
@@ -110,7 +110,7 @@ Partial Class PICUsartForm
         'ADCLLabel
         '
         Me.ADCLLabel.AutoSize = True
-        Me.ADCLLabel.Location = New System.Drawing.Point(291, 139)
+        Me.ADCLLabel.Location = New System.Drawing.Point(460, 131)
         Me.ADCLLabel.Name = "ADCLLabel"
         Me.ADCLLabel.Size = New System.Drawing.Size(16, 17)
         Me.ADCLLabel.TabIndex = 8
@@ -119,7 +119,7 @@ Partial Class PICUsartForm
         'ADCHResultLabel
         '
         Me.ADCHResultLabel.AutoSize = True
-        Me.ADCHResultLabel.Location = New System.Drawing.Point(267, 48)
+        Me.ADCHResultLabel.Location = New System.Drawing.Point(436, 40)
         Me.ADCHResultLabel.Name = "ADCHResultLabel"
         Me.ADCHResultLabel.Size = New System.Drawing.Size(101, 17)
         Me.ADCHResultLabel.TabIndex = 9
@@ -128,7 +128,7 @@ Partial Class PICUsartForm
         'ADCLResultLabel
         '
         Me.ADCLResultLabel.AutoSize = True
-        Me.ADCLResultLabel.Location = New System.Drawing.Point(271, 111)
+        Me.ADCLResultLabel.Location = New System.Drawing.Point(440, 103)
         Me.ADCLResultLabel.Name = "ADCLResultLabel"
         Me.ADCLResultLabel.Size = New System.Drawing.Size(97, 17)
         Me.ADCLResultLabel.TabIndex = 10
@@ -137,7 +137,7 @@ Partial Class PICUsartForm
         'TempResultLabel
         '
         Me.TempResultLabel.AutoSize = True
-        Me.TempResultLabel.Location = New System.Drawing.Point(458, 48)
+        Me.TempResultLabel.Location = New System.Drawing.Point(627, 40)
         Me.TempResultLabel.Name = "TempResultLabel"
         Me.TempResultLabel.Size = New System.Drawing.Size(118, 17)
         Me.TempResultLabel.TabIndex = 11
@@ -146,7 +146,7 @@ Partial Class PICUsartForm
         'TempFLabel
         '
         Me.TempFLabel.AutoSize = True
-        Me.TempFLabel.Location = New System.Drawing.Point(508, 76)
+        Me.TempFLabel.Location = New System.Drawing.Point(677, 68)
         Me.TempFLabel.Name = "TempFLabel"
         Me.TempFLabel.Size = New System.Drawing.Size(30, 17)
         Me.TempFLabel.TabIndex = 12
@@ -155,7 +155,7 @@ Partial Class PICUsartForm
         'TempCLabel
         '
         Me.TempCLabel.AutoSize = True
-        Me.TempCLabel.Location = New System.Drawing.Point(508, 111)
+        Me.TempCLabel.Location = New System.Drawing.Point(677, 103)
         Me.TempCLabel.Name = "TempCLabel"
         Me.TempCLabel.Size = New System.Drawing.Size(31, 17)
         Me.TempCLabel.TabIndex = 13
